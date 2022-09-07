@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+html, body, div, nav, .name {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+@media (min-aspect-ratio: 3/4) {
+    :root {
+        --navwidth: 30vw;
+        --navfloat: #ffffff;
+        --profconfontsize: 1.3vw;
+        --profconbottom: 1vw;
+        --profconleft: 1vw;
+        --detconfontsize: 1.3vw;
+        --detconpadleft: 1vw;
+    }
+}
+
+@media (max-aspect-ratio: 3/4) {
+    :root {
+        --navwidth: 100vw;
+        --navfloat: none;
+        --profconfontsize: 4.2vw;
+        --profconbottom: 5vw;
+        --profconleft: 5vw;
+        --detconfontsize: 4vw;
+        --detconpadleft: 5vw;
+    }
+}
+
+nav {
+    float: var(--navfloat);
+    width: var(--navwidth);
+}
+
+.profilecontainer {
+    position: relative;
+}
+
+    .profilecontainer img {
+        width: 100%;
+    }
+
+    .profilecontainer div {
+        position: absolute;
+        font-size: var(--profconfontsize);
+        bottom: var(--profconbottom);
+        left: var(--profconleft);
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+.detailcontainer {
+    font-size: var(--detconfontsize);
+    padding-left: var(--detconpadleft);
+}
+
+
+
+

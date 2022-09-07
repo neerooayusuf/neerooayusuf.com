@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\Files",
+    "\\src\\Styles"
   ],
-  "SelectedNode": "\\C:\\WebServer\\Neerooayusuf",
+  "SelectedNode": "\\index.html",
   "PreviewInSolutionExplorer": false
 }
