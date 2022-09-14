@@ -1,6 +1,13 @@
 * {
     box-sizing: border-box;
-    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+    display: none;
 }
 
 html, body, div, nav, .name {
@@ -11,15 +18,25 @@ html, body, div, nav, .name {
     font-family: 'Open Sans', sans-serif;
 }
 
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+a:hover, a:active {
+    color: blue;
+}
+
 @media (min-aspect-ratio: 3/4) {
     :root {
         --navwidth: 30vw;
         --navfloat: #ffffff;
         --profconfontsize: 1.3vw;
-        --profconbottom: 1vw;
+        --profconbottom: 0.5vw;
         --profconleft: 1vw;
-        --detconfontsize: 1.3vw;
+        --detconfontsize: 1.8vw;
         --detconpadleft: 1vw;
+        --soconfontsize: 4vw;
+        --detconmar:0.5vw;
     }
 }
 
@@ -28,29 +45,44 @@ html, body, div, nav, .name {
         --navwidth: 100vw;
         --navfloat: none;
         --profconfontsize: 4.2vw;
-        --profconbottom: 5vw;
+        --profconbottom: 2vw;
         --profconleft: 5vw;
-        --detconfontsize: 4vw;
+        --detconfontsize: 6vw;
         --detconpadleft: 5vw;
+        --soconfontsize: 12vw;
+        --detconmar: 2vw;
     }
 }
 
 nav {
     float: var(--navfloat);
     width: var(--navwidth);
+    background-color:lightgrey;
+}
+
+.navbottom {
+    height: calc(100vh - var(--navwidth));
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .profilecontainer {
     position: relative;
+    height: var(--navwidth);
+
 }
 
     .profilecontainer img {
         width: 100%;
+        border-bottom-left-radius: calc(2* var(--profconleft));
+        border-bottom-right-radius: calc(2* var(--profconleft));
+
     }
 
     .profilecontainer div {
         position: absolute;
         font-size: var(--profconfontsize);
+        margin: var(--detconmar);
         bottom: var(--profconbottom);
         left: var(--profconleft);
         color: white;
@@ -59,9 +91,18 @@ nav {
 
 .detailcontainer {
     font-size: var(--detconfontsize);
+    margin: var(--detconmar);
     padding-left: var(--detconpadleft);
+    text-decoration: none;
 }
 
-
-
-
+.socialcontainer {
+    font-size: var(--detconfontsize);
+    text-decoration: none;
+}
+    .socialcontainer i {
+        width: 23%;
+        font-size: var(--soconfontsize);
+        text-align: center;
+    }
+    
